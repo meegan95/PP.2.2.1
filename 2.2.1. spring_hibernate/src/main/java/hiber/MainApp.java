@@ -18,13 +18,14 @@ public class MainApp {
 
       userService.add(new User("James", "Bond", "noTurnSignals@mail.ru", new Car("bmw",34)));
       userService.add(new User("Oleg", "Johnson", "hookah@mail.ru",new Car("mercedes",124)));
-      userService.add(new User("Boris", "Brown", "dontRideJustfix@mail.ru",new Car("bmw",34)));
-      userService.add(new User("John", "Travolta", "boyarin@mail.ru",new Car("gaz",24)));
+      userService.add(new User("Boris", "Brown", "dontRideJustfix@mail.ru",new Car("bmw",36)));
+      userService.add(new User("UserName", "UserSurname", "user@mail.ru",new Car("userCar",00)));
 
       List<User> users = userService.listUsers();
       System.out.println('\n' + "Все пользователи:" + '\n' + users);
-      List<User> carOwners = userService.getUserByCar("bmw",34);
-      System.out.println('\n' + "Все пользователи c данной машиной:" + '\n' + carOwners);
+
+      User userByCar = userService.getUserByCar("bmw",34);
+      System.out.println('\n' + "Пользователь c данной машиной:" + '\n' + userByCar);
 
       context.close();
    }
